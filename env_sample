@@ -1,0 +1,8 @@
+DATABASE_URL=''
+GOOGLE_EMAIL=''
+GOOGLE_PASS=''
+DISCORD_TOKEN=''
+#application id
+DISCORD_CLIENT_ID=''
+#server id
+DISCORD_GUILD_ID='' 
