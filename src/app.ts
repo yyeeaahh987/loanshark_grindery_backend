@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 import workflowRouter from './router/workflowRouter';
 import emailRouter from './router/emailRouter';
 import discordRouter from './router/discordRouter';
+import fs from 'fs';
 
 
 const app: Application = express()
@@ -17,6 +18,7 @@ app.use(cors({
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
+const file=fs.readFileSync('./99C1DE75A9C446DA2F9E18021676C2C9.txt')
 
 if (process.env.DATABASE_URL) {
     console.log(`${process.env.DATABASE_URL}`)
@@ -36,6 +38,9 @@ app.use('/email', emailRouter);
 app.use('/discord', discordRouter);
 app.use('/workflow', workflowRouter);
 
+app.get('/.well-known/pki-validation/99C1DE75A9C446DA2F9E18021676C2C9.txt',(req:Request,res:Response)=>{
+    res.sendFile('/home/ec2-user/loanshark_grindery_backend/src/99C1DE75A9C446DA2F9E18021676C2C9.txt');
+})
 
 app.listen(port, function () {
     console.log(`App is listening on port ${port} !`)
