@@ -18,7 +18,7 @@ app.use(cors({
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-const file=fs.readFileSync('./99C1DE75A9C446DA2F9E18021676C2C9.txt')
+// const file=fs.readFileSync('./99C1DE75A9C446DA2F9E18021676C2C9.txt')
 
 if (process.env.DATABASE_URL) {
     console.log(`${process.env.DATABASE_URL}`)
