@@ -12,6 +12,7 @@ import https from 'https'
 
 const app: Application = express()
 const port: number = 8080
+const httpsPort: number = 8443
 app.use(cors({
     origin: '*'
 }));
@@ -48,7 +49,9 @@ app.listen(port, function () {
     console.log(`App is listening on port ${port} !`)
 })
 
+
 const httpsServer = https.createServer(cred, app)
-httpsServer.listen(8443)
+httpsServer.listen(httpsPort)
+console.log(`https App is listening on port ${httpsPort} !`)
 
 
